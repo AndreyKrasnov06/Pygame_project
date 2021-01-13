@@ -1,5 +1,0 @@
-<RCC>
-  <qresource prefix="Flappy">
-    <file>data/background.jpg</file>
-  </qresource>
-</RCC>

@@ -5,7 +5,6 @@ from cryptography.fernet import Fernet
 
 key = b'qd5JYGBKxjReISZ31TcGTuVIxO3W2j89f0WWLTBMBHw='
 f = Fernet(key)
-print(key)
 
 
 def draw_floor():
@@ -115,7 +114,7 @@ except:
         high_score = 0
 bird_movement = 0
 can_score = True
-running = True
+running = False
 bg_surface = pygame.image.load('data/background-day.png').convert()
 bg_surface = pygame.transform.scale2x(bg_surface)
 

@@ -1,12 +1,7 @@
 import subprocess
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow
-
-
-def test():
-    pass
-
+from PyQt5.QtWidgets import QMainWindow, QApplication
 
 def bird():
     subprocess.Popen(['python', 'flappy_update.py'])
@@ -18,7 +13,7 @@ class MyWidget(QMainWindow):
         uic.loadUi('form.ui', self)  # Загружаем дизайн
         self.setMouseTracking(True)
         self.flappy_button.clicked.connect(bird)
-        self.flappy_button.setStyleSheet("background-image : url('background.jpg')")
+        self.flappy_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
 
 
 if __name__ == "__main__":
