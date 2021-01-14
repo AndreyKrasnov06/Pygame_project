@@ -30,7 +30,7 @@ pushButton2:hover:!pressed
      <rect>
       <x>390</x>
       <y>50</y>
-      <width>500</width>
+      <width>600</width>
       <height>50</height>
      </rect>
     </property>
@@ -146,7 +146,7 @@ pushButton2:hover:!pressed
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
