@@ -15,6 +15,10 @@ def snake():
     subprocess.Popen(['python', 'snake_game.py'])
 
 
+def tetris():
+    subprocess.Popen(['python', 'tetris_game.py'])
+
+
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -24,6 +28,7 @@ class MyWidget(QMainWindow):
         self.setMouseTracking(True)
         self.flappy_button.clicked.connect(bird)
         self.snake_button.clicked.connect(snake)
+        self.tetris_button.clicked.connect(tetris)
         self.flappy_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
 
 
