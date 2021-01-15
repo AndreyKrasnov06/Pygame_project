@@ -96,7 +96,7 @@ pushButton2:hover:!pressed
    <widget class="QPushButton" name="snake_button">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>10</x>
       <y>160</y>
       <width>300</width>
       <height>350</height>
@@ -141,7 +141,7 @@ pushButton2:hover:!pressed
    <widget class="QPushButton" name="tetris_button">
     <property name="geometry">
      <rect>
-      <x>960</x>
+      <x>970</x>
       <y>160</y>
       <width>300</width>
       <height>350</height>
@@ -180,7 +180,7 @@ pushButton2:hover:!pressed
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

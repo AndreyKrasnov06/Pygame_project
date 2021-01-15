@@ -30,7 +30,7 @@ class MyWidget(QMainWindow):
         self.flappy_button.clicked.connect(bird)
         self.flappy_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
         self.snake_button.clicked.connect(snake)
-        self.snake_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
+        self.snake_button.setStyleSheet("background-image : url('data/background-snake.jpg');")
         self.tetris_button.clicked.connect(tetris)
         self.tetris_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
 
