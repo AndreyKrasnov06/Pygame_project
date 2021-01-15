@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>data/icon_steam_vr.png</normaloff>data/icon_steam_vr.png</iconset>
+    <normaloff>data/icon_steam.png</normaloff>data/icon_steam.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">pushButton:hover:!pressed
@@ -180,7 +180,7 @@ pushButton2:hover:!pressed
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
