@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 # основной интерфейс программы
 # запуск игр
 def bird():
-    subprocess.Popen(['python', 'flappy_update.py'])
+    subprocess.Popen(['python', 'flappy_bird.py'])
 
 
 def snake():

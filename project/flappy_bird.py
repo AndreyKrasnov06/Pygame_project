@@ -158,7 +158,7 @@ while True:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE and running:
                 bird_movement = 0
-                bird_movement -= 7
+                bird_movement -= 10
                 flap_sound.play()
             if event.key == pygame.K_SPACE and not running:
                 running = True
