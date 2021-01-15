@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 # основной интерфейс программы
 scriptDir = os.path.dirname(os.path.realpath('data/background.png'))  # Загружаем иконку приложения
 
-
+# запуск игр
 def bird():
     subprocess.Popen(['python', 'flappy_update.py'])
 
