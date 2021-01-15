@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>data/icon_steam_vr.png</normaloff>data/icon_steam_vr.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">pushButton:hover:!pressed
 {
@@ -28,11 +32,48 @@ pushButton2:hover:!pressed
    <widget class="QLabel" name="title_label">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>340</x>
       <y>50</y>
       <width>600</width>
       <height>50</height>
      </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="200">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="200">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
     </property>
     <property name="font">
      <font>
@@ -41,6 +82,9 @@ pushButton2:hover:!pressed
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>КЛАССИЧЕСКИЕ ИГРЫ</string>
@@ -53,14 +97,16 @@ pushButton2:hover:!pressed
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>300</y>
+      <y>160</y>
       <width>300</width>
-      <height>120</height>
+      <height>350</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <italic>true</italic>
+      <family>Impact</family>
+      <pointsize>16</pointsize>
+      <italic>false</italic>
      </font>
     </property>
     <property name="styleSheet">
@@ -96,10 +142,16 @@ pushButton2:hover:!pressed
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>300</y>
+      <y>160</y>
       <width>300</width>
-      <height>120</height>
+      <height>350</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Impact</family>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -121,24 +173,6 @@ pushButton2:hover:!pressed
      <string>Разработка Краснова Андрея и Кайдалова Руслана</string>
     </property>
    </widget>
-   <widget class="QLabel" name="description_label">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>520</y>
-      <width>950</width>
-      <height>110</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -146,7 +180,7 @@ pushButton2:hover:!pressed
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

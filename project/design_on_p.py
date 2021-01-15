@@ -23,13 +23,16 @@ class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('form.ui', self)  # Загружаем дизайн
+        self.setStyleSheet("background-color:rgb(10, 10, 10)")
         self.setWindowTitle('КЛАССИЧЕСКИЕ ИГРЫ')
-        # self.setWindowIcon(QtGui.QIcon(scriptDir + os.path.sep + 'background.png'))
+        self.title_label.setStyleSheet("background-color:rgb(10, 10, 10)")
         self.setMouseTracking(True)
         self.flappy_button.clicked.connect(bird)
-        self.snake_button.clicked.connect(snake)
-        self.tetris_button.clicked.connect(tetris)
         self.flappy_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
+        self.snake_button.clicked.connect(snake)
+        self.snake_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
+        self.tetris_button.clicked.connect(tetris)
+        self.tetris_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
 
 
 if __name__ == "__main__":

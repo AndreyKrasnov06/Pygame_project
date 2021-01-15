@@ -79,7 +79,7 @@ def score_display(game_state):
 def update_score(score, high_score):
     if score > high_score:
         high_score = score
-        with open('score.txt', "wb") as config_file:
+        with open('data/score.txt', "wb") as config_file:
             config_file.write(f.encrypt(bytes(str(high_score), 'utf-8')))
     return high_score
 
@@ -106,10 +106,10 @@ game_font = pygame.font.Font('04B_19.ttf', 40)
 gravity = 0.25
 score = 0
 try:
-    with open('score.txt', "rb") as config_file:
+    with open('data/score.txt', "rb") as config_file:
         high_score = int(f.decrypt(config_file.read()))
 except:
-    with open('score.txt', "wb") as config_file:
+    with open('data/score.txt', "wb") as config_file:
         config_file.write(f.encrypt(bytes('0', 'utf-8')))
         high_score = 0
 bird_movement = 0
