@@ -28,11 +28,11 @@ class MyWidget(QMainWindow):
         self.title_label.setStyleSheet("background-color:rgb(10, 10, 10)")
         self.setMouseTracking(True)
         self.flappy_button.clicked.connect(bird)
-        self.flappy_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
+        self.flappy_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px")
         self.snake_button.clicked.connect(snake)
-        self.snake_button.setStyleSheet("background-image : url('data/background-snake.jpg');")
+        self.snake_button.setStyleSheet("background-image : url('data/background-snake.jpg'); border-radius: 8px")
         self.tetris_button.clicked.connect(tetris)
-        self.tetris_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px;")
+        self.tetris_button.setStyleSheet("background-image : url('data/background.png'); border-radius: 8px")
 
 
 if __name__ == "__main__":
