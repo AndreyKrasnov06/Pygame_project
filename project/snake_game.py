@@ -1,14 +1,14 @@
 import pygame
 import random
 
-pygame.init()
+pygame.init()  # Инициализация
 
 white = (255, 255, 255)
 yellow = (255, 255, 102)
 black = (0, 0, 0)
 red = (213, 50, 80)
 green = (0, 255, 0)
-blue = (50, 153, 213)
+blue = (50, 153, 213)  # Создание цветов
 
 dis_width = 600
 dis_height = 400
@@ -22,7 +22,7 @@ snake_block = 10
 snake_speed = 15
 
 font_style = pygame.font.SysFont("bahnschrift", 25)
-score_font = pygame.font.SysFont("comicsansms", 35)
+score_font = pygame.font.SysFont("comicsansms", 35)  # Выбор шрифтов
 
 
 def your_score(score):
@@ -40,6 +40,7 @@ def message(msg, color):
     dis.blit(mesg, [60, 160])
 
 
+# основной игровой цикл
 def gameLoop():
     game_over = False
     game_close = False
@@ -63,6 +64,7 @@ def gameLoop():
             your_score(length_of_snake - 1)
             pygame.display.update()
 
+            # обработка событий
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_q:
@@ -88,6 +90,7 @@ def gameLoop():
                     y1_change = snake_block
                     x1_change = 0
 
+        # проверка на выход за пределы экрана
         if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 < 0:
             game_close = True
 
