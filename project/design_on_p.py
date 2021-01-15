@@ -4,6 +4,7 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+# основной интерфейс программы
 scriptDir = os.path.dirname(os.path.realpath('data/background.png'))  # Загружаем иконку приложения
 
 

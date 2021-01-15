@@ -59,6 +59,7 @@ class Tetris:
         self.field = []
         self.score = 0
         self.state = "start"
+        # дешифрование
         key = b'qd5JYGBKxjReISZ31TcGTuVIxO3W2j89f0WWLTBMBHw='
         self.f = Fernet(key)
         try:
@@ -77,6 +78,7 @@ class Tetris:
     def new_figure(self):
         self.figure = Figure(3, 0)
 
+    # логика
     def intersects(self):
         intersection = False
         for i in range(4):
@@ -137,6 +139,7 @@ class Tetris:
         if self.intersects():
             self.figure.rotation = old_rotation
 
+    # шифрование
     def update_score(self):
         if self.score > self.high_score:
             self.high_score = self.score
@@ -155,7 +158,7 @@ screen = pygame.display.set_mode(size)
 
 pygame.display.set_caption("ТЕТРИС")
 
-done = False
+running = True
 clock = pygame.time.Clock()
 fps = 25
 game = Tetris(20, 10)
@@ -163,7 +166,8 @@ counter = 0
 
 pressing_down = False
 
-while not done:
+# основной игровой цикл
+while running:
     if game.figure is None:
         game.new_figure()
     counter += 1
@@ -176,7 +180,7 @@ while not done:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            done = True
+            running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 game.rotate()
