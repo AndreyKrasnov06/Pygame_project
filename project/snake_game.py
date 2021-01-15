@@ -32,12 +32,12 @@ def your_score(score):
 
 def our_snake(snake_block, snake_list):
     for x in snake_list:
-        pygame.draw.rect(dis, black, [x[0], x[1], snake_block, snake_block])
+        pygame.draw.rect(dis, green, [x[0], x[1], snake_block, snake_block])
 
 
 def message(msg, color):
     mesg = font_style.render(msg, True, color)
-    dis.blit(mesg, [dis_width / 6, dis_height / 3])
+    dis.blit(mesg, [60, 160])
 
 
 def gameLoop():
@@ -58,7 +58,7 @@ def gameLoop():
 
     while not game_over:
         while game_close:
-            dis.fill(blue)
+            dis.fill(black)
             message("Ты проиграл! C - продолжить, Q - выйти", red)
             your_score(length_of_snake - 1)
             pygame.display.update()
@@ -93,8 +93,8 @@ def gameLoop():
 
         x1 += x1_change
         y1 += y1_change
-        dis.fill(blue)
-        pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
+        dis.fill(black)
+        pygame.draw.rect(dis, red, [foodx, foody, snake_block, snake_block])
         snake_head = [x1, y1]
         snake_list.append(snake_head)
         if len(snake_list) > length_of_snake:
