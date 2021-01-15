@@ -1,5 +1,6 @@
 import pygame
 import random
+from cryptography.fernet import Fernet
 
 colors = [
     (0, 0, 0),
@@ -58,6 +59,15 @@ class Tetris:
         self.field = []
         self.score = 0
         self.state = "start"
+        key = b'qd5JYGBKxjReISZ31TcGTuVIxO3W2j89f0WWLTBMBHw='
+        self.f = Fernet(key)
+        try:
+            with open('data/score_tetris.txt', "rb") as config_file:
+                self.high_score = int(self.f.decrypt(config_file.read()))
+        except:
+            with open('data/score_tetris.txt', "wb") as config_file:
+                config_file.write(self.f.encrypt(bytes('0', 'utf-8')))
+                self.high_score = 0
         for i in range(height):
             new_line = []
             for j in range(width):
@@ -127,6 +137,12 @@ class Tetris:
         if self.intersects():
             self.figure.rotation = old_rotation
 
+    def update_score(self):
+        if self.score > self.high_score:
+            self.high_score = self.score
+            with open('data/score_tetris.txt', "wb") as config_file:
+                config_file.write(self.f.encrypt(bytes(str(self.high_score), 'utf-8')))
+
 
 pygame.init()
 
@@ -176,8 +192,8 @@ while not done:
                 game.__init__(20, 10)
 
     if event.type == pygame.KEYUP:
-            if event.key == pygame.K_DOWN:
-                pressing_down = False
+        if event.key == pygame.K_DOWN:
+            pressing_down = False
 
     screen.fill(WHITE)
 
@@ -200,14 +216,17 @@ while not done:
 
     font = pygame.font.SysFont('Calibri', 25, True, False)
     font1 = pygame.font.SysFont('Calibri', 65, True, False)
-    text = font.render("Score: " + str(game.score), True, BLACK)
+    score = font.render("Score: " + str(game.score), True, BLACK)
+    high_score = font.render("High Score: " + str(game.high_score), True, BLACK)
     text_game_over = font1.render("Game Over", True, (255, 125, 0))
     text_game_over1 = font1.render("Press ESC", True, (255, 215, 0))
 
-    screen.blit(text, [0, 0])
+    screen.blit(score, [0, 0])
     if game.state == "gameover":
+        game.update_score()
         screen.blit(text_game_over, [20, 200])
         screen.blit(text_game_over1, [25, 265])
+        screen.blit(high_score, [0, 17])
 
     pygame.display.flip()
     clock.tick(fps)
