@@ -63,10 +63,10 @@ class Tetris:
         key = b'qd5JYGBKxjReISZ31TcGTuVIxO3W2j89f0WWLTBMBHw='
         self.f = Fernet(key)
         try:
-            with open('data/score_tetris.txt', "rb") as config_file:
+            with open('data/score_tetris.txt', 'rb') as config_file:
                 self.high_score = int(self.f.decrypt(config_file.read()))
         except:
-            with open('data/score_tetris.txt', "wb") as config_file:
+            with open('data/score_tetris.txt', 'wb') as config_file:
                 config_file.write(self.f.encrypt(bytes('0', 'utf-8')))
                 self.high_score = 0
         for i in range(height):
@@ -143,7 +143,7 @@ class Tetris:
     def update_score(self):
         if self.score > self.high_score:
             self.high_score = self.score
-            with open('data/score_tetris.txt', "wb") as config_file:
+            with open('data/score_tetris.txt', 'wb') as config_file:
                 config_file.write(self.f.encrypt(bytes(str(self.high_score), 'utf-8')))
 
 
